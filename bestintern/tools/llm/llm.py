@@ -1,4 +1,4 @@
-"""Talk to LLMs"""
+"""Talk to LLMs."""
 
 from litellm import completion
 
