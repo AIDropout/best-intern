@@ -2,7 +2,7 @@
 
 from litellm import completion
 
-from config.config import LiteLLMModels, LiteLLMResponse
+from config.models import LiteLLMModels, LiteLLMResponse
 
 
 class LiteLLM:

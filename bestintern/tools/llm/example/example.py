@@ -8,8 +8,8 @@ Steps:
 
 from dotenv import load_dotenv
 
-from bestintern.api.llm.llm import LiteLLM
-from config.config import LiteLLMModels
+from bestintern.tools.llm.llm import LiteLLM
+from config.models import LiteLLMModels
 
 load_dotenv()
 
