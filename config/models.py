@@ -1,3 +1,5 @@
+"""Models for this app."""
+
 from datetime import date
 from typing import List, Optional
 
