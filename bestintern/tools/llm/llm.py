@@ -1,8 +1,21 @@
 """Talk to LLMs."""
 
-from litellm import completion
+from enum import Enum
 
-from config.models import LiteLLMModels, LiteLLMResponse
+from litellm import completion
+from pydantic import BaseModel
+
+
+class LiteLLMModels(Enum):
+    gemini = "gemini/gemini-pro"  # requires GEMINI_API_KEY
+
+
+class LiteLLMConfig(BaseModel):
+    model: LiteLLMModels
+
+
+class LiteLLMResponse(BaseModel):
+    content: str
 
 
 class LiteLLM:
