@@ -134,7 +134,11 @@ def clean_json_structure(data):
 
     cleaned_data["properties"] = simplify_properties(data.get("properties", {}))
 
+    # Remove 'title' from all sections if present
     for section in cleaned_data.values():
         section.pop("title", None)
 
-    return cleaned_data["properties"]
+    # If only 'properties' present, return what's inside
+    if len(cleaned_data) == 1 and "properties" in cleaned_data:
+        return cleaned_data["properties"]
+    return cleaned_data
