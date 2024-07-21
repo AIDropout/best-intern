@@ -22,6 +22,7 @@
 - [ ] make resume data -> job matching algorithm
 - [ ] config database and test uploading and fetching for resumes and jobs
 - [ ] write api combining all logic
+  - make sure to have protective logic, only 2 pages of all resumes are read, etc.
 - [ ] connect to frontend
 - [ ] loc frontend behind login and account logic
   - upload resume
