@@ -33,6 +33,7 @@
   - once user logs in, save their user data, resume, internships
   - every time they login, it will show the saved data
   - only interaction user will have is the ability to upload a new resume for more jobs
+  - can do a lil bit of post processing where llm gives user some advice / give a complement
 
 ## 🛠️ Environment Setup
 
