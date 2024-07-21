@@ -2,7 +2,7 @@
 
 from enum import Enum
 
-import weave
+# import weave
 from litellm import completion
 from pydantic import BaseModel
 
