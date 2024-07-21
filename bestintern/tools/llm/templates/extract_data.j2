@@ -1,0 +1,16 @@
+Extract the following information from the given text and format it as a JSON object with consice summarized data:
+
+{{ fields_info }}
+
+Ensure all required fields are filled. If a field is optional and the information is not present in the text, omit it from the JSON.
+
+For date fields, use the format YYYY-MM-DD.
+For boolean fields, use true or false.
+For list fields, provide an array of items.
+
+Ensure you are adhering to the required feild formatting.
+
+Text to extract from:
+{{ text }}
+
+Respond only with the JSON object, no additional text before or after it.
