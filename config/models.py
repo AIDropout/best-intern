@@ -3,7 +3,7 @@
 from datetime import date
 from typing import List, Optional
 
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel
 
 
 class _Education(BaseModel):
@@ -52,7 +52,7 @@ class _ExtracurricularActivity(BaseModel):
 
 class ResumeMetadata(BaseModel):
     name: str
-    email: EmailStr
+    email: str
     phone: str
     summary: Optional[str] = None
     skills: List[str]
@@ -67,19 +67,19 @@ class ResumeMetadata(BaseModel):
 
 
 class JobMetadata(BaseModel):
-    job_title: str
-    company: str
-    location: str
-    skills_required: List[str]
-    education_required: Optional[List[str]] = None
-    experience_required: Optional[List[str]] = None
-    job_description: str
-    salary_range: Optional[str] = None
-    job_type: str
-    application_url: str
-    posted_date: Optional[date] = None
-    deadline: Optional[date] = None
-    company_size: Optional[str] = None
-    industry: Optional[str] = None
-    benefits: Optional[List[str]] = None
-    remote: Optional[bool] = None
+    job_title: Optional[str]
+    company: Optional[str]
+    location: Optional[str]
+    skills_required: Optional[List[str]]
+    education_required: Optional[List[str]]
+    experience_required: Optional[List[str]]
+    job_description: Optional[str]
+    salary_range: Optional[str]
+    job_type: Optional[str]
+    application_url: Optional[str]
+    posted_date: Optional[date]
+    deadline: Optional[date]
+    company_size: Optional[str]
+    industry: Optional[str]
+    benefits: Optional[List[str]]
+    remote: Optional[bool]

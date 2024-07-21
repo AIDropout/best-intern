@@ -1,0 +1,57 @@
+Job link: https://www.google.com/search?q=nvidia+jobs&sourceid=chrome&ie=UTF-8&jbr=sep:0&udm=8#vhid=vt%3D20/docid%3DJp5n_71TGOVHlHzEAAAAAA%3D%3D&vssid=jobs-detail-viewer&sxsrf=ADLYWIKXLFjvocWLoC2-u2tMTvFefy3iGg:1721544435486
+
+Job highlights
+Identified by Google from the original job post
+Qualifications
+BS or MS degree in Computer Engineering, Computer Science, or equivalent experience
+Background in solving problems that apply to large complex systems deployed at scale
+Strong C/C++ programming skills as well as having shown initiative in pursuing independent coding projects
+Familiarity with computer system architecture, microprocessor, and microcontroller fundamentals (caches, buses, memory controllers, DMA, etc.)
+Strong Operating systems fundamentals with Kernel experience on Linux or Windows systems
+8+ years of meaningful software development experience
+Ways To Stand Out From The Crowd
+Background and strength with sophisticated system-level debugging is invaluable
+Experience working on system level reliability and resiliency features
+Familiarity with system level security concepts
+Experience with embedded system SW concepts
+Benefits
+Your base salary will be determined based on your location, experience, and the pay of employees in similar positions
+You will also be eligible for equity and benefits
+Responsibilities
+As someone who is hardworking and passionate about their work, you will design key aspects of our production GPU kernel drivers and embedded SW, focusing on GPU and platform resiliency
+You should demonstrate the ability to excel in an environment with sophisticated system level interactions
+Design and implement changes in NVIDIA SW stack to enhance system level resiliency and reliability at datacenter scale with thousands of GPUs
+Focusing on adding features that bolster system level availability, early fault detection and faster recovery
+You will follow the devices all the way through the development process to datacenter systems, customer desktops, notebooks, workstations, and gaming console products that are used throughout the world
+Be heavily involved in architecture definition and early modeling, simulation required to create our groundbreaking products
+Multiple opportunities to collaborate and communicate effectively with teams from all around the globe
+Job description
+NVIDIA is searching for a highly motivated, creative engineer to join the GPU Software team. As a GPU system software engineer, you will work with a team of very hardworking software and hardware engineers involving a wide variety of technologies. As someone who is hardworking and passionate about their work, you will design key aspects of our production GPU kernel drivers and embedded SW, focusing on GPU and platform resiliency. You should demonstrate the ability to excel in an environment with sophisticated system level interactions.
+
+What You'll Be Doing
+• Design and implement changes in NVIDIA SW stack to enhance system level resiliency and reliability at datacenter scale with thousands of GPUs. Focusing on adding features that bolster system level availability, early fault detection and faster recovery.
+• You will follow the devices all the way through the development process to datacenter systems, customer desktops, notebooks, workstations, and gaming console products that are used throughout the world.
+• Be heavily involved in architecture definition and early modeling, simulation required to create our groundbreaking products
+• Multiple opportunities to collaborate and communicate effectively with teams from all around the globe
+
+What We Need To See
+• BS or MS degree in Computer Engineering, Computer Science, or equivalent experience
+• Background in solving problems that apply to large complex systems deployed at scale.
+• Strong C/C++ programming skills as well as having shown initiative in pursuing independent coding projects
+• Familiarity with computer system architecture, microprocessor, and microcontroller fundamentals (caches, buses, memory controllers, DMA, etc.)
+• Strong Operating systems fundamentals with Kernel experience on Linux or Windows systems
+• 8+ years of meaningful software development experience
+
+Ways To Stand Out From The Crowd
+• Background and strength with sophisticated system-level debugging is invaluable
+• Experience working on system level reliability and resiliency features.
+• Familiarity with system level security concepts
+• Experience with embedded system SW concepts.
+
+NVIDIA is widely considered to be one of the technology world’s most desirable employers. NVIDIA is also an equal opportunity employer. We have some of the most forward-thinking and hardworking people on the planet working for us. If you're creative, passionate and self-motivated, we want to hear from you! NVIDIA is leading the way in groundbreaking developments in Artificial Intelligence, High-Performance Computing and Visualization. The GPU, our invention, serves as the visual cortex of modern computers and is at the heart of our products and services.
+
+The base salary range is 180,000 USD - 339,250 USD. Your base salary will be determined based on your location, experience, and the pay of employees in similar positions.
+
+You will also be eligible for equity and benefits . NVIDIA accepts applications on an ongoing basis.
+
+NVIDIA is committed to fostering a diverse work environment and proud to be an equal opportunity employer. As we highly value diversity in our current and future employees, we do not discriminate (including in our hiring and promotion practices) on the basis of race, religion, color, national origin, gender, gender expression, sexual orientation, age, marital status, veteran status, disability status or any other characteristic protected by law.
