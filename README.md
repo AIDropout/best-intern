@@ -15,6 +15,24 @@
 2. make resume data schema
 3. make resume->internship match algorithm
 
+## Progress Tracking
+
+- [ ] make resume -> data extraction + upload to db endpoints
+- [ ] make job description -> data extraction + upload to db endpoints
+- [ ] make resume data -> job matching algorithm
+- [ ] config database and test uploading and fetching for resumes and jobs
+- [ ] write api combining all logic
+- [ ] connect to frontend
+- [ ] loc frontend behind login and account logic
+  - upload resume
+  - runs the api
+  - shows the 'best' or 'worst' internship match
+  - has the rest of them blurred
+  - if user tries to interact, put a login popup
+  - once user logs in, save their user data, resume, internships
+  - every time they login, it will show the saved data
+  - only interaction user will have is the ability to upload a new resume for more jobs
+
 ## 🛠️ Environment Setup
 
 Make sure Python, [ngrok](https://ngrok.com/), and [uv]() are installed.
