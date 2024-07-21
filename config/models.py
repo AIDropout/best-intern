@@ -67,14 +67,8 @@ class JobMetadata(BaseModel):
     job_title: Optional[str] = Field(description="Job title.")
     company: Optional[str] = Field(description="Company name.")
     location: Optional[str] = Field(description="Job location.")
-    skills_required: Optional[List[str]] = Field(
-        description="Skills required for the job."
-    )
-    education_required: Optional[List[str]] = Field(
-        description="Education required for the job."
-    )
-    experience_required: Optional[List[str]] = Field(
-        description="Experience required for the job."
+    vise_requirements: Optional[str] = Field(
+        description="Short description of specified visa requirements."
     )
     job_description: Optional[str] = Field(description="Job responsibilities.")
     salary_range: Optional[str] = Field(description="Salary range.")
@@ -84,5 +78,17 @@ class JobMetadata(BaseModel):
     application_url: Optional[str] = Field(description="URL to apply for the job.")
     posted_date: Optional[date] = Field(description="Date when the job was posted.")
     deadline: Optional[date] = Field(description="Application deadline.")
-    benefits: Optional[List[str]] = Field(description="List of benefits.")
     remote: Optional[bool] = Field(description="Whether the job is remote.")
+    citizen_only: Optional[bool] = Field(
+        description="Whether this job is only of USA citizens,"
+    )
+    skills_required: Optional[List[str]] = Field(
+        description="List of skills wanted for the job."
+    )
+    education_required: Optional[List[str]] = Field(
+        description="List of education wanted for the job."
+    )
+    experience_required: Optional[List[str]] = Field(
+        description="List of experience wanted for the job."
+    )
+    benefits: Optional[List[str]] = Field(description="List of benefits.")
