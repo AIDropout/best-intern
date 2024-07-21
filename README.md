@@ -18,7 +18,7 @@
 ## Progress Tracking
 
 - [x] make resume -> data extraction + upload to db endpoints
-- [ ] make job description -> data extraction + upload to db endpoints
+- [x] make job description -> data extraction + upload to db endpoints
 - [ ] make resume data -> job matching algorithm
 - [ ] config database and test uploading and fetching for resumes and jobs
 - [ ] write api combining all logic

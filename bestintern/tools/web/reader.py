@@ -24,7 +24,7 @@ class WaitOptions(BaseModel):
     text_content: Optional[str] = None
     html_tag: Optional[str] = None
     html_attribute: Optional[str] = None
-    timeout: int = 10
+    timeout: int = 5
 
 
 class WebpageReader:
