@@ -21,7 +21,7 @@ class LiteLLMResponse(BaseModel):
 
 
 class LiteLLM:
-    weave.init("bestintern")
+    # weave.init("bestintern")
 
     def __init__(
         self, model: LiteLLMModels, system_prompt: str = "", num_retries: int = 0
@@ -30,7 +30,7 @@ class LiteLLM:
         self.system_prompt = system_prompt
         self.num_retries = num_retries
 
-    @weave.op()
+    # @weave.op()
     def askllm(
         self, query: str, overwrite_system_prompt: str = None
     ) -> LiteLLMResponse:

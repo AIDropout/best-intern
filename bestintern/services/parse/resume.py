@@ -1,13 +1,9 @@
-"""Parse resumes and build a model."""
-
-from dotenv import load_dotenv
+"""Parse resumes pdfs and build a model."""
 
 from bestintern.tools.llm.llm import LiteLLMModels
 from bestintern.tools.llm.modeler import LLMDataExtracted, LLMDataExtractor
 from bestintern.tools.pdf.reader import PDFReader
 from config.models import ResumeMetadata
-
-load_dotenv()
 
 
 class ResumeParser:
@@ -26,8 +22,8 @@ class ResumeParser:
         # Step 3: Ask the LLM to parse through the data
         llm_extractor = LLMDataExtractor(model=self.llm_model)
         extracted_data = llm_extractor.extract_data(text_content, ResumeMetadata)
-        self.extracted_data = extracted_data
 
+        self.extracted_data = extracted_data
         return extracted_data
 
     def save_resume_model(
