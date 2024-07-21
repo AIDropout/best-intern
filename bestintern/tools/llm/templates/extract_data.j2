@@ -1,16 +1,17 @@
-Extract the following information from the given text and format it as a JSON object with consice summarized data:
+**Extract the following information from the provided text and format it as a JSON object with concise, summarized data:**
 
 {{ fields_info }}
 
-Ensure all required fields are filled. If a field is optional and the information is not present in the text, omit it from the JSON.
+**Instructions:**
 
-For date fields, use the format YYYY-MM-DD.
-For boolean fields, use true or false.
-For list fields, provide an array of items.
+0. Remove 'type' and 'description' fields for all returned data.
+1. Ensure all required fields are filled.
+2. Omit optional fields if the information is not present in the text.
+3. Format date fields as `YYYY-MM-DD`. If month and/or day are missing, assume `01` for both.
+4. Format boolean fields as `true` or `false`.
+5. Format list fields as arrays of items.
 
-Ensure you are adhering to the required feild formatting.
-
-Text to extract from:
+**Text to extract from:**
 {{ text }}
 
-Respond only with the JSON object, no additional text before or after it.
+**Respond only with the JSON object.**

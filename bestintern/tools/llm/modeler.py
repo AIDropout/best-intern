@@ -7,14 +7,14 @@ from pydantic import BaseModel, ValidationError
 
 from bestintern.tools.llm.llm import LiteLLM, LiteLLMModels
 from bestintern.utils.utils import (
-    get_fields_info,
+    clean_json_structure,
     load_jinja_template,
     parse_llm_response,
 )
 
 T = TypeVar("T", bound=BaseModel)
 
-MAX_ATTEMPTS = 3
+MAX_ATTEMPTS = 2
 
 
 class LLMDataExtracted(BaseModel):
@@ -26,7 +26,12 @@ class LLMDataExtractor:
     def __init__(self, model: LiteLLMModels, max_retries: int = MAX_ATTEMPTS):
         self.llm = LiteLLM(model=model, num_retries=max_retries)
 
-    def extract_data(self, text: str, model_class: Type[T]) -> LLMDataExtracted:
+    def extract_data(
+        self, text: str, model_class: Type[T], preprocess: bool = False
+    ) -> LLMDataExtracted:
+        if preprocess:
+            text = self._preprocess_text(text, model_class)
+
         prompt = self._generate_prompt(text, model_class)
 
         for attempt in range(MAX_ATTEMPTS):
@@ -53,9 +58,13 @@ class LLMDataExtractor:
 
         raise ValueError("Unexpected error in data extraction process")
 
+    def _preprocess_text(self, text: str, model_class: Type[T]) -> str:
+        """Organizes data from the text in more readable formatting using model_class"""
+        raise NotImplementedError("this funtion is yet to be implemented")
+
     def _generate_prompt(self, text: str, model_class: Type[T]) -> str:
         schema = model_class.model_json_schema()
-        fields_info = get_fields_info(schema)
+        fields_info = clean_json_structure(schema)
         template_dir = os.path.dirname(os.path.abspath(__file__))
         template = load_jinja_template("extract_data.j2", template_dir)
         return template.render(fields_info=fields_info, text=text)

@@ -8,11 +8,10 @@ Steps:
 
 import json
 import os
-from pprint import pprint
 from typing import List, Optional
 
 from dotenv import load_dotenv
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from bestintern.tools.llm.llm import LiteLLM, LiteLLMModels
 from bestintern.tools.llm.modeler import LLMDataExtractor
@@ -30,11 +29,11 @@ def ex_litellm():
 
 def ex_modeler():
     class ExampleDataModel(BaseModel):
-        name: str
-        age: Optional[int]
-        likes: Optional[List[str]]
-        dislikes: Optional[List[str]]
-        birthday: Optional[str]
+        name: str = Field(description="name of subject")
+        age: Optional[int] = Field(description="age of subject")
+        likes: Optional[List[str]] = Field(description="likes of subject")
+        dislikes: Optional[List[str]] = Field(description="dislikes of subject")
+        birthday: Optional[str] = Field(description="birthday of subject")
 
     example_text = """
             Hi, my name's Devanshu. I am 19 years old and I enjoy writing clean code.
@@ -42,10 +41,14 @@ def ex_modeler():
             I hate not hitting my protein intake. Btw my bday's 10/26/04 ;)
         """
 
-    data_extractor = LLMDataExtractor(model=LiteLLMModels.gemini)
-    data = data_extractor.extract_data(text=example_text, model_class=ExampleDataModel)
+    data_extractor = LLMDataExtractor(model=LiteLLMModels.gemini_flash)
+    extracted = data_extractor.extract_data(
+        text=example_text, model_class=ExampleDataModel
+    )
 
-    pprint(data)
+    print(json.dumps(json.loads(extracted.data.model_dump_json()), indent=2))
+    print("\n~ data not found in this description:")
+    print(extracted.not_found)
 
 
 def ex_job_modeler():
@@ -60,7 +63,7 @@ def ex_job_modeler():
     )
 
     print(json.dumps(json.loads(extracted.data.model_dump_json()), indent=2))
-    print("\n~ data not found in this job descriptio:")
+    print("\n~ data not found in this job description:")
     print(extracted.not_found)
 
 

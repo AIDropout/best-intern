@@ -88,24 +88,53 @@ def load_jinja_template(
     return template
 
 
-def get_fields_info(schema: Dict[str, Any]) -> str:
-    """
-    Generates a string with information about the fields in a JSON schema.
+def clean_json_structure(data):
+    def extract_type(any_of_list):
+        for item in any_of_list:
+            if "type" in item:
+                return item["type"]
+        return None
 
-    Args:
-        schema: The JSON schema.
+    def simplify_properties(properties):
+        simplified = {}
+        for key, value in properties.items():
+            if "anyOf" in value:
+                type_value = extract_type(value["anyOf"])
+            else:
+                type_value = value.get("type")
 
-    Returns:
-        A formatted string with information about the fields.
-    """
-    fields_info = ""
-    for field, details in schema["properties"].items():
-        field_type = details.get("type", "any")
-        if "items" in details:
-            field_type = f"list of {details['items'].get('type', 'any')}"
-        required = field in schema.get("required", [])
-        fields_info += (
-            f"- {field} ({field_type}{'', required}): "
-            f"{details.get('description', 'No description')}\n"
-        )
-    return fields_info
+            # Only include properties with a type or description
+            if type_value or value.get("description"):
+                simplified[key] = {
+                    "type": type_value,
+                    "description": value.get("description"),
+                    "default": value.get("default"),
+                }
+                simplified[key] = {
+                    k: v for k, v in simplified[key].items() if v is not None
+                }
+
+        return {k: v for k, v in simplified.items() if v}
+
+    def clean_object(obj):
+        cleaned = {
+            "type": obj.get("type"),
+            "properties": simplify_properties(obj.get("properties", {})),
+        }
+        cleaned = {
+            k: v
+            for k, v in cleaned.items()
+            if v is not None and (not isinstance(v, dict) or v)
+        }
+        return cleaned
+
+    cleaned_data = {
+        key: clean_object(value) for key, value in data.get("$defs", {}).items()
+    }
+
+    cleaned_data["properties"] = simplify_properties(data.get("properties", {}))
+
+    for section in cleaned_data.values():
+        section.pop("title", None)
+
+    return cleaned_data["properties"]
