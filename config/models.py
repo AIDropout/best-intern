@@ -64,10 +64,17 @@ class ResumeMetadata(BaseModel):
 
 
 class JobMetadata(BaseModel):
+    """
+    All data saved for jobs when parsing through websites.
+
+    Note: this schema is also reflected on Supabase. Please ensure this matches the
+    uploaded schema for proper functionality.
+    """
+
     job_title: Optional[str] = Field(description="Job title.")
     company: Optional[str] = Field(description="Company name.")
     location: Optional[str] = Field(description="Job location.")
-    vise_requirements: Optional[str] = Field(
+    visa_requirements: Optional[str] = Field(
         description="Short description of specified visa requirements."
     )
     job_description: Optional[str] = Field(description="Job responsibilities.")

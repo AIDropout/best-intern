@@ -3,7 +3,7 @@
 from enum import Enum
 
 # import weave
-from litellm import completion
+from litellm import completion, embedding
 from pydantic import BaseModel
 
 

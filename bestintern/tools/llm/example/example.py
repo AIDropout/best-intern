@@ -35,6 +35,19 @@ def ex_modeler():
         dislikes: Optional[List[str]] = Field(description="dislikes of subject")
         birthday: Optional[str] = Field(description="birthday of subject")
 
+    class Example2(BaseModel):
+        rate_code: str = Field(description="identifier for a rate")
+        new_rate: str = Field(description="the new interest rate")
+        prev_rate: str = Field(description="the previous interest rate")
+
+    example_2 = """
+    Hi, my name's Devanshu. I am 19 years old and I enjoy writing clean code.
+            I also like to swim, lift, and sleep. And I love strawberries!!
+            I hate not hitting my protein intake. Btw my bday's 10/26/04 ;)
+
+    rate identifier: 12345, new rate: 10%
+    """
+
     example_text = """
             Hi, my name's Devanshu. I am 19 years old and I enjoy writing clean code.
             I also like to swim, lift, and sleep. And I love strawberries!!
@@ -46,6 +59,12 @@ def ex_modeler():
         text=example_text, model_class=ExampleDataModel
     )
 
+    print(json.dumps(json.loads(extracted.data.model_dump_json()), indent=2))
+    print("\n~ data not found in this description:")
+    print(extracted.not_found)
+
+    extracted = data_extractor.extract_data(text=example_2, model_class=Example2)
+    print("DANNYS DATA")
     print(json.dumps(json.loads(extracted.data.model_dump_json()), indent=2))
     print("\n~ data not found in this description:")
     print(extracted.not_found)

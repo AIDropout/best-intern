@@ -40,7 +40,6 @@ class JobParser:
         # Step 4: Ask the LLM to parse through the data
         llm_extractor = LLMDataExtractor(model=self.llm_model)
         extracted_data = llm_extractor.extract_data(text_content, JobMetadata)
-
         self.extracted_data = extracted_data
         return extracted_data
 

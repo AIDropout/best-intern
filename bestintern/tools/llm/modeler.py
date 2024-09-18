@@ -14,7 +14,7 @@ from bestintern.utils.utils import (
 
 T = TypeVar("T", bound=BaseModel)
 
-MAX_ATTEMPTS = 2
+from config.constants import MAX_ATTEMPTS
 
 
 class LLMDataExtracted(BaseModel):
